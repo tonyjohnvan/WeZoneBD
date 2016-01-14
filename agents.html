@@ -1,0 +1,266 @@
+<!doctype html>
+<!--[if lte IE 9]>
+<html class="lte-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Remove Tap Highlight on Windows Phone IE -->
+    <meta name="msapplication-tap-highlight" content="no"/>
+
+    <link rel="icon" type="image/png" href="assets/img/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="assets/img/favicon-32x32.png" sizes="32x32">
+
+    <title>Wezone控制台</title>
+
+    <!-- additional styles for plugins -->
+    <!-- weather icons -->
+    <link rel="stylesheet" href="bower_components/weather-icons/css/weather-icons.min.css" media="all">
+    <!-- metrics graphics (charts) -->
+    <link rel="stylesheet" href="bower_components/metrics-graphics/dist/metricsgraphics.css">
+    <!-- chartist -->
+    <link rel="stylesheet" href="bower_components/chartist/dist/chartist.min.css">
+
+    <!-- uikit -->
+    <link rel="stylesheet" href="bower_components/uikit/css/uikit.almost-flat.min.css" media="all">
+
+    <!-- flag icons -->
+    <link rel="stylesheet" href="assets/icons/flags/flags.min.css" media="all">
+
+    <!-- Wezone admin -->
+    <link rel="stylesheet" href="assets/css/main.css" media="all">
+
+    <!-- matchMedia polyfill for testing media queries in JS -->
+    <!--[if lte IE 9]>
+    <script type="text/javascript" src="bower_components/matchMedia/matchMedia.js"></script>
+    <script type="text/javascript" src="bower_components/matchMedia/matchMedia.addListener.js"></script>
+    <![endif]-->
+
+</head>
+<body class=" sidebar_main_open sidebar_main_swipe">
+<!-- main header -->
+<header id="header_main">
+    <div class="header_main_content">
+        <nav class="uk-navbar">
+
+            <!-- main sidebar switch -->
+            <a href="#" id="sidebar_main_toggle" class="sSwitch sSwitch_left">
+                <span class="sSwitchIcon"></span>
+            </a>
+
+            <!-- secondary sidebar switch -->
+            <a href="#" id="sidebar_secondary_toggle" class="sSwitch sSwitch_right sidebar_secondary_check">
+                <span class="sSwitchIcon"></span>
+            </a>
+
+            <div class="uk-navbar-flip">
+                <ul class="uk-navbar-nav user_actions">
+                    <li><a href="#" id="full_screen_toggle" class="user_action_icon uk-visible-large"><i
+                            class="material-icons md-24 md-light">&#xE5D0;</i></a></li>
+
+                    <li data-uk-dropdown="{mode:'click',pos:'bottom-right'}">
+                        <a href="#" class="user_action_image"><img class="md-user-image"
+                                                                   src="assets/img/avatars/avatar_11_tn.png"
+                                                                   alt=""/></a>
+
+                        <div class="uk-dropdown uk-dropdown-small">
+                            <ul class="uk-nav js-uk-prevent">
+                                <li><a href="login.html" id="logoutSys">登出</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <div class="header_main_search_form">
+        <i class="md-icon header_main_search_close material-icons">&#xE5CD;</i>
+
+        <form class="uk-form">
+            <input type="text" class="header_main_search_input"/>
+            <button class="header_main_search_btn uk-button-link"><i class="md-icon material-icons">&#xE8B6;</i>
+            </button>
+        </form>
+    </div>
+</header>
+<!-- main header end -->
+<!-- main sidebar -->
+<aside id="sidebar_main">
+
+    <div class="sidebar_main_header">
+        <div class="sidebar_logo">
+            <a href="index.html" class="sSidebar_hide"><img src="assets/img/logo_main.png" alt="" height="15"
+                                                            width="71"/></a>
+            <a href="index.html" class="sSidebar_show"><img src="assets/img/logo_main_small.png" alt="" height="32"
+                                                            width="32"/></a>
+        </div>
+    </div>
+
+    <div class="menu_section">
+        <ul>
+            <li title="Main">
+                <a href="index.html">
+                    <span class="menu_icon"><i class="material-icons">&#xE871;</i></span>
+                    <span class="menu_title">主页面</span>
+                </a>
+            </li>
+            <li class="current_section" title="Agent">
+                <a href="agents.html">
+                    <span class="menu_icon"><i class="material-icons">&#xE87C;</i></span>
+                    <span class="menu_title">商家信息</span>
+                </a>
+            </li>
+            <li title="Events">
+                <a href="events.html">
+                    <span class="menu_icon"><i class="material-icons">&#xE53E;</i></span>
+                    <span class="menu_title">活动信息</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</aside>
+<!-- main sidebar end -->
+
+<div id="page_content">
+    <div id="page_content_inner">
+
+
+        <div class="md-card">
+            <div class="md-card-content">
+                <h3 class="heading_a">添加信息</h3>
+
+                <div class="uk-grid" data-uk-grid-margin>
+                    <div class="uk-width-medium-1-2">
+                        <div class="uk-form-row">
+                            <div class="uk-grid">
+                                <div class="uk-width-medium-1-2">
+                                    <label>商家名称</label>
+                                    <input type="text" class="md-input" id="aName"/>
+                                </div>
+                                <div class="uk-width-medium-1-2">
+                                    <label>商家网站</label>
+                                    <input type="text" class="md-input" id="aWebsite"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-form-row">
+                            <label>商家地址</label>
+                            <input type="text" class="md-input" id="aAddress"/>
+                        </div>
+                        <div class="uk-form-row">
+                            <div class="uk-grid">
+                                <div class="uk-width-medium-1-2">
+                                    <label>商家电话</label>
+                                    <input type="text" class="md-input" id="aPhone"/>
+                                </div>
+                                <div class="uk-width-medium-1-2">
+                                    <label>商家Email</label>
+                                    <input type="email" class="md-input" id="aEmail"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-form-row">
+                            <label>商家联系人姓名</label>
+                            <input type="text" class="md-input" id="aContact"/>
+                        </div>
+                    </div>
+                    <div class="uk-width-medium-1-2">
+                        <div class="uk-form-row">
+                            <label>玩转BD联系人姓名</label>
+                            <input type="text" class="md-input" id="wbdName"/>
+                        </div>
+                        <div class="uk-form-row">
+                            <label>玩转BD联系人Email</label>
+                            <input type="email" class="md-input" id="wbdEmail"/>
+                        </div>
+                        <div class="uk-form-row">
+                            <label>商家支付信息</label>
+                            <input type="email" class="md-input" id="aPaymentInfo"/>
+                        </div>
+                        <div class="uk-form-row">
+                            <div class="uk-grid">
+                                <div class="uk-width-medium-1">
+                                    <label>商家支付方式</label>
+
+                                    <div class="uk-grid" data-uk-grid-margin>
+                                        <div class="uk-width-medium-1 uk-width-large-1">
+                                            <select id="aPaymentMethod" data-md-selectize>
+                                                <option value="PayPal">PayPal</option>
+                                                <option value="Chase Quick Pay">Chase Quick Pay</option>
+                                                <option value="Check">Check</option>
+                                                <option value="BoA Quick Pay">BoA Quick Pay</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="uk-grid">
+                        <div class="uk-width-1-1">
+                            <button type="submit" class="md-btn md-btn-primary" id="newASubmit">提交</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="md-card uk-margin-medium-bottom">
+            <div class="md-card-content">
+                <table id="dt_tableTools" class="uk-table" cellspacing="0" width="100%"></table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- google web fonts -->
+<script>
+    WebFontConfig = {
+        google: {
+            families: [
+                'Source+Code+Pro:400,700:latin',
+                'Roboto:400,300,500,700,400italic:latin'
+            ]
+        }
+    };
+    (function () {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+                '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+    })();
+</script>
+
+<!-- common functions -->
+<script src="assets/js/common.js"></script>
+<!-- uikit functions -->
+<script src="assets/js/uikit_custom.js"></script>
+<!-- Wezone common functions/helpers -->
+<script src="assets/js/wz_admin_common.js"></script>
+
+
+<!-- page specific plugins -->
+<!-- datatables -->
+<script src="bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+<!-- datatables colVis-->
+<script src="bower_components/datatables-colvis/js/dataTables.colVis.js"></script>
+<!-- datatables tableTools-->
+<script src="bower_components/datatables-tabletools/js/dataTables.tableTools.js"></script>
+<!-- datatables custom integration -->
+<script src="assets/js/custom/datatables_uikit.min.js"></script>
+
+<!--  datatables functions -->
+<!--<script src="assets/js/pages/plugins_datatables.js"></script>-->
+
+<script src="https://cdn.firebase.com/js/client/2.3.2/firebase.js"></script>
+<script src="assets/js/myjs.js"></script>
+</body>
+</html>
